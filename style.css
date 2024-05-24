@@ -1,0 +1,154 @@
+body {
+    background:black;
+    color:white;
+    font-size:1.5em;
+    overflow-x:hidden;
+    display:flex;
+    font-family:Times New Roman;
+}
+
+#donate, #privacy, #terms {
+    width:auto;
+    position:fixed;
+    z-index:2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align:center;
+    background:white;
+    color:black;
+    padding:2%;
+    display:none;
+}
+
+#privacy, #terms, #donate {
+    overflow-y:auto;
+    height:70%;
+ }
+
+#gcash-pic {
+    width:30%;
+    height:auto;
+}
+
+.footer-text {
+    font-size:0.8em;
+}
+
+#main-input {
+    width:70%;
+    margin:auto;
+    font-family:Times New Roman;
+}
+
+#maintenance {
+    display:none;
+}
+
+#main-button:hover {
+    cursor:pointer;
+    background:white;
+    color:black;
+}
+
+a, a:visited, a:hover {
+    font-weight:thin;
+    color:purple;
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+#main-button:active {
+    cursor:pointer;
+    background:white;
+    color:aqua;
+}
+
+#main-button, #main-input {
+    font-size:1em;
+    border-radius:25px;
+    padding:1%;
+    background:black;
+    color:white;
+    border: solid 5px white;
+}
+
+#container {
+    margin:0;
+    height:85vh;
+    width:100%;
+    flex-direction:column;
+    flex:1;
+    z-index:1;
+    display:none;
+}
+
+#chat-box {
+    padding: 2%;
+    height:68%;
+    overflow-y:auto;
+    flex-direction:column;
+    flex:1;
+    color: #09ff00;
+}
+
+.user-text {
+    color: #00d5ff;
+}
+
+#input-box {
+    padding: 1%;
+    height:18%;
+}
+
+.center {
+    text-align:center;
+}
+
+.close-button {
+    font-size:1em;
+    border-radius:25px;
+    padding:1%;
+    background:black;
+    color:white;
+}
+
+.close-button:hover {
+    font-size:1em;
+    border-radius:25px;
+    padding:1%;
+    background:white;
+    color:black;
+    border:black 5px solid;
+    cursor:pointer;
+}
+
+.close-button:active {
+    font-size:1em;
+    border-radius:25px;
+    padding:1%;
+    background:white;
+    color:black;
+    border:black 5px solid;
+    cursor:pointer;
+}
+
+@media (max-width: 768px) {
+    #main-button, #main-input {
+        padding:1.5%;
+    }
+    #donate, #privacy, #terms {
+        width:85%;
+    }
+    #gcash-pic {
+        width:100%;
+        height:auto;
+    }
+    #privacy, #terms, #donate {
+        overflow-y:auto;
+        height:85%;
+     }
+	 #container { 
+	    height:70vh;
+	 }
+}
