@@ -1,4 +1,4 @@
-const latestUpdateDate = "June 6, 2024, 4:00 PM";
+const latestUpdateDate = "June 7, 2024, 11:12 PM";
 const preTrainedData = {
     // english
     "what | what|where | where|who | who|why | why|how | how|when | when|much | much|do you|have|think|remember":["Ayaw ko makipagusap sa wikang ingles, ang gusto ko ay tagalog lamang."],
@@ -37,7 +37,7 @@ const preTrainedData = {
     "ano,kulang":["Ang kulang ay isang subjective, kasi maaaring sa iba ay kulang, nguni't sa iyo ay sapat na, ang hindi nakuntento ang siyang may kasalanan."],
     "san|saan,kulang":["Kung talagang mahal ka ng isang tao, hindi ka paghahanapan ng hindi mo kayang ibigay sa kaniya, ang pagmamahal ay pagtanggap kung sino ang iyong tao na talagang minahal, manatili ka lang matatag, malalagpasan mo din iyan."],
     "ewan|iwan,sayo|sa yo|sa iyo":["Ayy HAHAHA, hindi ka naman naiinis?"],
-    "kamusta,ka":["Ayos lang ako, ikaw ba?","Salamat sa pagtatanong, ok lang ako, ikaw ba?"],
+    "kamusta|kumusta,ka":["Ayos lang ako, ikaw ba?","Salamat sa pagtatanong, ok lang ako, ikaw ba?"],
     "wala,ako":["Walang kulang sa iyo, ang sarili mo ay sapat na.","Wala kang pagkukulang, hindi lang sila nakuntento."],
     "ayos|ok,ako|naman":["Mabuti naman kung ganon, ano ang iyong gustong pagusapan?","Maigi kung ganon, alin ang iyong nais na talakayin?"],
     "tungkol,sa":["Ahh, ano ang iyong gustong malaman tungkol diyan?"],
@@ -84,6 +84,7 @@ const preTrainedData = {
     "may|maging|naging":["Medyo lang naman, pero di ko naiintindihan masyado.","Hindi ko pa din alam eh, pasensya ka na."],
     "sana":["Sana sinabi mo, para di na umibig pang muli.","Ou, sana nga.","Sana nga talaga."],
     "dewow":["Dewow talaga HAHAHAHA."],
+    "balita":["Di ko alam kung anong balita.","Wala na akong kaalaman tungkol sa balitang iyan.","Talaga? Hindi ako makapaniwala sa balitang iyan."],
     "para":["Para saan pa? Diba wala na?"],
     "gusto":["Ang kagustuhan ay nararapat na pagsikapan.","Gusto mo? gawan mo ng paraan."],
     "saya":["Masaya ka ba?","Bakit mo nasabing masaya?","Ang kasiyahan ay isang desisyon natin sa buhay."],
