@@ -26,11 +26,6 @@ body {
     height:70%;
  }
 
-#gcash-pic {
-    width:30%;
-    height:auto;
-}
-
 .footer-text {
     font-size:0.8em;
 }
@@ -45,12 +40,6 @@ body {
     display:none;
 }
 
-#main-button:hover {
-    cursor:pointer;
-    background:white;
-    color:black;
-}
-
 a, a:visited, a:hover {
     font-weight:thin;
     color:purple;
@@ -58,24 +47,25 @@ a, a:visited, a:hover {
     cursor:pointer;
 }
 
-#main-button:active {
-    cursor:pointer;
-    background:white;
-    color:aqua;
-}
-
-#main-button, #main-input {
+.btns, #main-input {
     font-size:1em;
     border-radius:25px;
     padding:1%;
     background:black;
     color:white;
     border: solid 5px white;
+    margin-bottom:0.5%;
+    margin-top:0.5%;
+}
+
+.btns:hover, .btns:active {
+    cursor:pointer;
+    color:aqua;
 }
 
 #container {
     margin:0;
-    height:85vh;
+    height:83vh;
     width:100%;
     flex-direction:column;
     flex:1;
@@ -85,7 +75,7 @@ a, a:visited, a:hover {
 
 #chat-box {
     padding: 2%;
-    height:68%;
+    height:70%;
     overflow-y:auto;
     flex-direction:column;
     flex:1;
@@ -134,8 +124,9 @@ a, a:visited, a:hover {
 }
 
 @media (max-width: 768px) {
-    #main-button, #main-input {
+    .btns, #main-input {
         padding:1.5%;
+        margin-bottom:3%;
     }
     #privacy, #terms {
         width:85%;
