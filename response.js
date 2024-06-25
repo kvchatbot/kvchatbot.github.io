@@ -1,8 +1,8 @@
 function TimedReponse(x) {
     $('#main-input').prop("disabled", true);
     $('#main-input').css("background", "grey");
-    $('#main-button').prop("disabled", true);
-    $('#main-button').css("background", "grey");
+    $('.tgbtns').prop("disabled", true);
+    $('.btns').css("background", "grey");
     let index = 0;
     let TimedResponse = setInterval(() => {
         $('#chat-box').append(x.charAt(index));
@@ -13,8 +13,8 @@ function TimedReponse(x) {
             $('#main-input').prop("disabled", false);
             $('#main-input').css("background", "black");
             $('#main-input').focus();
-            $('#main-button').prop("disabled", false);
-            $('#main-button').css("background", "black");
+            $('.tgbtns').prop("disabled", false);
+            $('.btns').css("background", "black");
             $('#chat-box').append("<br>");
         }
     }, 1);
