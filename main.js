@@ -34,10 +34,22 @@ $("document").ready(function () {
     TimedReponse("KVBot: " + greetings[random(0,greetings.length - 1)]);
     $("#lastdateupdate").text("Last updated on: " + latestUpdateDate); // date of last update
 
-    $("#main-button").click(() => {
+    $("#send-btn").click(() => {
         if ($('#main-input').val() != "") { // check if the input is empty
             userEnteredInput();
         }
+    });
+
+    $("#copy-convo").click(() => {
+        var htmlContent = $('#chat-box').html();
+        var tempElement = $('<div>').html(htmlContent);
+        tempElement.find('br').replaceWith('\n');
+        var textContent = tempElement.text();
+        navigator.clipboard.writeText(textContent).then(function() {
+            alert('Text successfully copied to clipboard: ');
+        }).catch(function(err) {
+            console.error('Failed to copy text: ', err);
+        });
     });
 
     $("#main-input").on('keypress', (key) => {
