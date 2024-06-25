@@ -1,4 +1,4 @@
-const latestUpdateDate = "June 25, 2024, 11:26 PM";
+const latestUpdateDate = "June 26, 2024, 7:11 AM";
 const preTrainedData = {
     // english
     "could | could|should | should|what | what|where | where|who | who|why | why|how | how|when | when|much | much|do you|have|think|remember|birthday":["Ayaw ko makipagusap sa wikang ingles, ang gusto ko ay tagalog lamang."],
