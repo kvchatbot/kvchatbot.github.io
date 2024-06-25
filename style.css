@@ -10,7 +10,7 @@ body {
 #privacy, #terms {
     width:auto;
     position:fixed;
-    z-index:2;
+    z-index:5;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -123,23 +123,45 @@ a, a:visited, a:hover {
     cursor:pointer;
 }
 
+#right-fixed {
+    text-align:center;
+    background:white;
+    color:black;
+    position:fixed;
+    top:0;
+    right:-3000px;
+    font-size:0.7em;
+    width:60%;
+    height:100vh;
+    line-height:2;
+    transition: right 0.5s ease-in-out;
+}
+
+#menu-mobile, #right-fixed {
+    display:none;
+    z-index:2;
+    padding:2%;
+}
+
 @media (max-width: 768px) {
     .btns, #main-input {
         padding:1.5%;
         margin-bottom:3%;
     }
+    #menu-mobile, #right-fixed {
+        display:block;
+    }
     #privacy, #terms {
         width:85%;
-    }
-    #gcash-pic {
-        width:100%;
-        height:auto;
     }
     #privacy, #terms {
         overflow-y:auto;
         height:85%;
      }
 	 #container { 
-	    height:70vh;
+	    height:75vh;
 	 }
+     #footer-desktop {
+        display:none;
+     }
 }
