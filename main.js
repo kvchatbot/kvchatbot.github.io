@@ -32,7 +32,7 @@ function sanitize(input) {
 $("document").ready(function () {
     running ? $("#container").css("display","block") : $("#maintenance").css("display","block");
     TimedReponse("KVBot: " + greetings[random(0,greetings.length - 1)]);
-    $("#lastdateupdate").text("Last updated on: " + latestUpdateDate); // date of last update
+    $(".lastdateupdate").text("Last updated on: " + latestUpdateDate); // date of last update
 
     $("#send-btn").click(() => {
         if ($('#main-input').val() != "") { // check if the input is empty
@@ -50,6 +50,14 @@ $("document").ready(function () {
         }).catch(function(err) {
             console.error('Failed to copy text: ', err);
         });
+    });
+
+    $("#menu-button-mobile").click(() => {
+        $("#right-fixed").css("right","0px");
+    });
+
+    $("#menu-close-button-mobile").click(() => {
+        $("#right-fixed").css("right","-3000px");
     });
 
     $("#main-input").on('keypress', (key) => {
