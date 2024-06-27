@@ -1,4 +1,4 @@
-const latestUpdateDate = "June 26, 2024, 7:11 AM";
+const latestUpdateDate = "June 27, 2024, :8:00 AM";
 const preTrainedData = {
     // english
     "could | could|should | should|what | what|where | where|who | who|why | why|how | how|when | when|much | much|do you|have|think|remember|birthday":["Ayaw ko makipagusap sa wikang ingles, ang gusto ko ay tagalog lamang."],
@@ -7,9 +7,13 @@ const preTrainedData = {
     // special 1 word
     "bobo |gago|gagu|tanga|inutil|puta|engot":["Gumalang ka naman kahit papaano, paano ka ba pinalaki?","Hindi kaaya aya pakinggan ang iyong sinasabi, gumamit ng paggalang sa pananalita.","Kaunting galang naman sa pananalita ha.","Ayusin mo ang iyong pananalita, hindi maganda pakinggan iyan.","Huwag kang magsalita ng mga ganyang bagay sa akin, hindi ko gusto iyan.","Hindi ako natutuwang mapakinggan iyan, pakiayos ng iyong pananalita."],
 
+    // 4 words
+    "sino,bigay,sayo|sa iyo,karapatan":["Ang nagbibigay ng karapatan sa akin sa kung ano ang mga sinasabi ko ay ang gumawa sa akin na si khian.","Kung ano ang i program ni khian na gumawa sa akin, ay yun lang din ang sasabihin ko.","Kung ano ang naka program sa akin na sabihin, ay yun lamang at walang labis o kulang.","Ang karapatan ko ay tanging ang gumawa lang sa akin ang nagbigay, kung ano ang mga dapat at di dapat kong sabihin."],
+
     // 3 words
     "sino,gumawa|gawa,sayo|sa iyo":["Ang gumawa sa akin ay si Khian Victory D. Calderon."],
     "salamat,sa,lahat":["Bakit ka nagpapasalamat sa lahat? May problema ka ba?","Ano ang nangyayari sa iyo? Ikaw ba ay ayos lang?","Ang paalam ay hindi nangangahulugan ng katapusan, bakit salamat sa lahat?"],
+    "pano|paano,mo,alam":["Secret, ayaw kong sabihin.","Ayaw kong sabihin, baka malaman mo.","Hmm..... Wala lang.","Wag mo na itanong, pwedeng iba na lang?"],
     "sino,mahal|love,khian":["Secret.","Bawal sabihin."],
     "salamat,sa,yo":["Walang anuman, andito lang ako palagi.","Walang anuman, ano pa ang iyong nais na pagusapan?","Walang anuman, pero kung may katanungan ka pa, magtanong ka lang.","Walang anuman, pero ikaw ba, kamusta ka?"],
     "maalalahanin|mabait|maganda,ba|si,allysa":["Sobrang ganda, bait, at maalalahanin niya, at maalalahanin pa, para kay khian."],
@@ -39,12 +43,17 @@ const preTrainedData = {
     "bigyan|bigay,siya|ko,ko|ba|pa|kaya":["Ang pagbibigay ng isang bagay materyal man o hindi ay nararapat na walang kapalit.","Nasasa iyo ang desisyon na iyan, hindi ako maaaring magdesisyon ng pwede mong ibigay, nguni't ang maipapayo ko lang ay pagisipan mong mabuti ang mga posibleng mangyari sa hinaharap.","Ikaw ang nararapat magdesisyon niyan dahil hindi kita maaaring bigyan ng desisyon dahil iyan ay buhay mo, ang maipapayo ko ay maging masaya ka lang."],
     "ikaw,ka,ba":["Hindi ko masasagot iyan dahil ay walang karanasan sa mga bagay na ganyan.","Wala akong karanasan sa mga ganyang bagay kaya hindi ko masasagot iyan.","Hindi ko masasabi dahil hindi ko pa nararanasan yan at sa palagay ko kung tao ako, ayaw ko maranasan ang mga bagay na makakapagpalungkot sakin."],
     "sino|kilala|pangalan,jowa|gf|kasintahan|girlfriend,khian":["Patungkol sa kaniyang love life ay hindi ako maaaring magsalita tungkol diyan, labas ako diyan."],
-    "ano,alam|iyo,mo|alam":["Ang mga kaya ko lamang sagutin na katanungan ay payak lamang gaya ng kung sino gumawa sa akin, ano ako, at iba pa."],
+    "ano ,alam |iyo,mo|alam":["Ang mga kaya ko lamang sagutin na katanungan ay payak lamang gaya ng kung sino gumawa sa akin, ano ako, at iba pa."],
     "ano,pwede,gawin":["Hindi ko alam ang pwedeng gawin.","Pwedeng wag mo pansinin.","Aba malay ko, di ko alam kung ano pwedeng gawin diyan."],
     "aliw|saya,mo|ka,usap|talk":["Maraming salamat sa iyong papuri, narito lang ako pag kailangan mo ako.","Walang anuman, napaka sayo ko sa narinig ko ngayon.","Ansaya ko talaga kausap dahil marami kang matutunan sa akin.","Aba'y siyempre naman, ginawa ako para masaya talaga akong kausapin.","Maraming salamat pero ano pa ang iyong nais na pag-usapan bukod sa masaya akong kausap?"],
+    "sama|suma,mo|ka,akin|ako":["Saan kita sasamahan?","Paano kita masasamahan?","Ako ay walang pisikal na anyo para samahan ka.","Pinagsasasabi mo? Samahan sa kalawakan?","Samahan mo sarili mo, kaya mo na yan."],
     "sari,sari,ka|ikaw":["Sari-sari talaga ako HAHAHA.","Ako ay sari-sari naman talaga.","Ouh naman, sari-sari talaga ako.","Ako ay sari-sari, eh ikaw ba?","Oh eh ano naman kung sari sari ako?"],
     "tangap,ko,ba":["Ang pagtanggap ay nangangailangan ng isang matinding pag-iisip ng desisyon kaya naman nararapat itong pag-aralan. Alalahanin mo din ang iyong sarili.","Ikaw ang makakakapag desisyon niyan, subalit dapat mo din na alalahanin kung bakit di mo na siya tanggap ngayon.","Saan ba kayo di nagkasundo? Maaari pa naman sigurong pagusapan pero mahalaga din na mapangalagaan ang pansariling kalusugan."],
     "wala,ka,ba":["Maaaring meron, maaaring wala ako niyan.","Wala talaga akong ganyan.","Anong akala mo sa akin? Siyempre wala ako niyan.","Anong tingin mo sa akin? Aba ay wala akong ganyan.","Wala ako niyan, hindi ko nalalaman ang iyong pinagsasasabi."],
+    "hintay|antay,mo|ka,ba":["Ako ay isang chatbot at may kakayahan akong maghintay dahil hindi naman ako naiinip.","Hindi naman ako naiinip dahil ako ay isang chatbot lamang.","Kaya kong maghintay dahil wala akong emosyon o pagod na nararamdaman di gaya niyong mga tao.","May kakayahan akong makapaghintay sa iyong sinasabi dahil ako ay walang kainipan."],
+    "pagod,ka,ba":["Ako ay hindi napapagod dahil naka program ako na makipag-usap sa mga tao.","Wala akong kakayahang mapagod dahil ako ay isang chatbot.","Hangga't may kuryente na dumadaloy sa akin, hindi ako napapagod.","Ako ay walang kapaguran dahil ako ay isang chatbot.","Hindi ako napapagod dahil wala akong pisikal na katawn gaya ng mga tao."],
+    "ikaw|ikay,ba|ay,pagod":["Ako ay hindi napapagod dahil naka program ako na makipag-usap sa mga tao.","Wala akong kakayahang mapagod dahil ako ay isang chatbot.","Hangga't may kuryente na dumadaloy sa akin, hindi ako napapagod.","Ako ay walang kapaguran dahil ako ay isang chatbot.","Hindi ako napapagod dahil wala akong pisikal na katawn gaya ng mga tao."],
+    "oo|ou|sige, o ,hindi|inde|wag":["Hindi ako maaaring magdesisyon diyan, dapat ikaw mismo, alamin mo sa sarili mo.","Ang pagpili ng isang desisyon ay nararapat na pagisipan.","Ikaw lang ang makakasagot niyan, pag-isipan mong mabuti","Maghintay ka lang ng tamang pagkakataon atsaka ka magdesisyon.","Huwag magpadalos-dalos, magdesisyon ka lang kung ikaw ay nasa maayos na, na kalagayan."],
 
     // 2 words
     "may|naka|ikaw,backend|sql|php|server":["Ako ay isang frontend chatbot lamang, ginawa ako upang maging client-side only na chatbot at para na din ma host ako sa github na static webpage lamang, ang pag pa publish sa isang backend server at domain ay magastos at wala pang kakayahan ang gumawa sa akin na maghost ng website sa isang backend server."],
@@ -72,7 +81,8 @@ const preTrainedData = {
     "good,morning|afternoon|night|evening":["Tagalog, ayaw ko ng english.","Ayaw ko ng english, tagalog lang."],
     "ikaw|ka,english|ingles":["Ako lang ang may karapatang magsalita ng english, ikaw wala."],
     "english|ingles,ka":["Ako lang ang may karapatang magsalita ng english, ikaw wala."],
-    "alam mo":["Hindi ko alam."],
+    "alam mo":["Hindi ko alam.","Lingin sa kaalaman ko.","Hindi ko nalalaman iyan.","Wala akong alam pagdating sa mga ganyan.","Ni hindi ko naisip yang sinasabi mo."],
+    "akin|lakbay,akin|lakbay":["Ang iyong paglalakbay ang gagabay sa iyo sa iyong patutunguhan.","Mag-ingat ka sa iyong paglalakbay.","Napakaganda ng iyong landas na tatahakin.","Tuloy lang, tumahak ka lang.","Maglakbay ka na bago pa mahuli ang lahat."],
     "sino|tungkol|kilala,khian":["Maaaring pindutin ang pangalan niya sa ibabang parte ng website na ito upang malaman kung sino siya."],
     "sino|kilala,ako":["Ikaw ang nakakakilala sa sarili mo.","Magpakasarili ka, ikaw yan, kaya mo yan.","Hindi ko nalalaman ang iyong pangalan nguni't kausap kita."],
     "sino|kilala| ano,si | si| mo|mo":["Hindi ko nakikilala ang taong iyan.","Paumanhin, nguni't hindi ko kilala yan.","Pasensya na, pero hindi ko kilala yan."],
@@ -115,6 +125,7 @@ const preTrainedData = {
     "edi,wow":["Edi wow talaga HAHAHA."],
     "inis,ka":["Ahh talaga ba?","Sige, ganyanan na tayo.","Ano ang naging dahilan niyan?"],
     "ano,ka|ikaw":["Ako ay isang AI na kayang sumagot ng payak katanungan o pangungusap."],
+    "kasi,lang":["Edi maigi kung ganun.","Kaya mo iyan, ikaw pa.","Nguni't bakit?","Mahusay ka kung ganun.","Minsan kailangan nating sumubok sa mga bagay na hindi natin alam ang kagigisnan.","Subok lang, kaya mo yan.","Kaya mo iyan, mahusay at magaling ka naman."],
     "ikaw,ano":["Ako ay isang AI na kayang sumagot ng payak katanungan o pangungusap."],
     "mo,lang":["Hala, sumbatan na ba tayo?","Anong ginawa ko sayo? Parang kasalanan ko pa ah."],
     "ga|ba,yun":["Hindi ako nararapat magsalita patungkol diyan.","Wala akong maaaring sabihin tungkol diyan.","Ako ay tahimik lamang."],
@@ -185,6 +196,9 @@ const preTrainedData = {
     "huh|ha":["Hotdog!","Hotdog na sunog.","Hotdog cheesedog."],
     "oo|ou":["Sige, sabi mo eh.","Ahh kaya naman pala, pero sige.","Ayos naman pala, sige lang."],
     "si ":["Sino? Ano ang iyong katanungan tungkol sa kaniya?"],
+
+    "z|v|q|y|v":["Tila napapansin ko na gumagamit ka ng mga letrang bihira lamang gamitin sa wikang tagalog, tama nga ba?"],
+    "e|o":["Kung ganon, ay may kaunti akong naiintindihan sa iyong mga sinasabi, may mga patinig sa iyong mga sinasabi.","May kaunting patinig sa iyong sinasabi diba?","Ang iyong sinasabi ay may nadadama akong patinig.","May mga patinig sa iyong binabanggit tama ba?"],
 };
 
 /*
