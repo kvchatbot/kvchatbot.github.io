@@ -46,7 +46,7 @@ $("document").ready(function () {
         tempElement.find('br').replaceWith('\n');
         var textContent = tempElement.text();
         navigator.clipboard.writeText(textContent).then(function() {
-            alert('Text successfully copied to clipboard: ');
+            alert('Na Copy na ang Conversation!');
         }).catch(function(err) {
             console.error('Failed to copy text: ', err);
         });
